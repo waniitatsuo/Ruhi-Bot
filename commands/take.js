@@ -9,12 +9,12 @@ async function takeCommand(sock, chatId, message, args) {
         // Check if message is a reply to a sticker
         const quotedMessage = message.message?.extendedTextMessage?.contextInfo?.quotedMessage;
         if (!quotedMessage?.stickerMessage) {
-            await sock.sendMessage(chatId, { text: '❌ Reply to a sticker with .take <packname>' });
+            await sock.sendMessage(chatId, { text: '❌ Marque um sticker com o .take <nome do pacote>' });
             return;
         }
 
         // Get the packname from args or use default
-        const packname = args.join(' ') || 'Knight Bot';
+        const packname = args.join(' ') || 'Ruhi Bot';
 
         try {
             // Download the sticker
@@ -33,7 +33,7 @@ async function takeCommand(sock, chatId, message, args) {
             );
 
             if (!stickerBuffer) {
-                await sock.sendMessage(chatId, { text: '❌ Failed to download sticker' });
+                await sock.sendMessage(chatId, { text: '❌ Deu ruim pra baixar o sticker' });
                 return;
             }
 
@@ -45,7 +45,7 @@ async function takeCommand(sock, chatId, message, args) {
             const json = {
                 'sticker-pack-id': crypto.randomBytes(32).toString('hex'),
                 'sticker-pack-name': packname,
-                'emojis': ['🤖']
+                'emojis': ['🐯']
             };
 
             // Create exif buffer
@@ -69,12 +69,12 @@ async function takeCommand(sock, chatId, message, args) {
 
         } catch (error) {
             console.error('Sticker processing error:', error);
-            await sock.sendMessage(chatId, { text: '❌ Error processing sticker' });
+            await sock.sendMessage(chatId, { text: '❌ Erro ao baixar o sticker' });
         }
 
     } catch (error) {
         console.error('Error in take command:', error);
-        await sock.sendMessage(chatId, { text: '❌ Error processing command' });
+        await sock.sendMessage(chatId, { text: '❌ Erro ao processar o bot' });
     }
 }
 

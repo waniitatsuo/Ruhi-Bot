@@ -29,7 +29,7 @@ async function pingCommand(sock, chatId, message) {
         const uptimeFormatted = formatTime(uptimeInSeconds);
 
         const botInfo = `
-┏━━〔 🤖 𝐊𝐧𝐢𝐠𝐡𝐭𝐁𝐨𝐭-𝐌𝐃 〕━━┓
+┏━━〔 🐯 RUHI-BOT 〕━━┓
 ┃ 🚀 Ping     : ${ping} ms
 ┃ ⏱️ Uptime   : ${uptimeFormatted}
 ┃ 🔖 Version  : v${settings.version}
@@ -40,7 +40,7 @@ async function pingCommand(sock, chatId, message) {
 
     } catch (error) {
         console.error('Error in ping command:', error);
-        await sock.sendMessage(chatId, { text: '❌ Failed to get bot status.' });
+        await sock.sendMessage(chatId, { text: '❌ Consegui pegar minhas info naum.' });
     }
 }
 

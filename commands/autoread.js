@@ -26,13 +26,13 @@ async function autoreadCommand(sock, chatId, message) {
         
         if (!message.key.fromMe && !isOwner) {
             await sock.sendMessage(chatId, {
-                text: '❌ This command is only available for the owner!',
+                text: '❌ Só meu dono pode usar esse comando!',
                 contextInfo: {
                     forwardingScore: 1,
                     isForwarded: true,
                     forwardedNewsletterMessageInfo: {
                         newsletterJid: '120363161513685998@newsletter',
-                        newsletterName: 'KnightBot MD',
+                        newsletterName: 'Ruhi Bot',
                         serverMessageId: -1
                     }
                 }
@@ -63,7 +63,7 @@ async function autoreadCommand(sock, chatId, message) {
                         isForwarded: true,
                         forwardedNewsletterMessageInfo: {
                             newsletterJid: '120363161513685998@newsletter',
-                            newsletterName: 'KnightBot MD',
+                            newsletterName: 'Ruhi Bot',
                             serverMessageId: -1
                         }
                     }

@@ -6,7 +6,7 @@ const fetch = require('node-fetch');
 async function welcomeCommand(sock, chatId, message, match) {
     // Check if it's a group
     if (!chatId.endsWith('@g.us')) {
-        await sock.sendMessage(chatId, { text: 'This command can only be used in groups.' });
+        await sock.sendMessage(chatId, { text: '❗ Esse comando só pode ser usado em grupos.' });
         return;
     }
 
@@ -76,7 +76,7 @@ async function handleJoinEvent(sock, id, participants) {
                     hour12: true
                 });
                 
-                finalMessage = `╭╼━≪•𝙽𝙴𝚆 𝙼𝙴𝙼𝙱𝙴𝚁•≫━╾╮\n┃𝚆𝙴𝙻𝙲𝙾𝙼𝙴: @${displayName} 👋\n┃Member count: #${groupMetadata.participants.length}\n┃𝚃𝙸𝙼𝙴: ${timeString}⏰\n╰━━━━━━━━━━━━━━━╯\n\n*@${displayName}* Welcome to *${groupName}*! 🎉\n*Group 𝙳𝙴𝚂𝙲𝚁𝙸𝙿𝚃𝙸𝙾𝙽*\n${groupDesc}\n\n> *ᴘᴏᴡᴇʀᴇᴅ ʙʏ Knight Bot*`;
+                finalMessage = `╭╼━≪•𝙽𝙴𝚆 𝙼𝙴𝙼𝙱𝙴𝚁•≫━╾╮\n┃BEM VINDO: @${displayName} 👋\n┃Member count: #${groupMetadata.participants.length}\n┃𝚃𝙸𝙼𝙴: ${timeString}⏰\n╰━━━━━━━━━━━━━━━╯\n\n*@${displayName}* Welcome to *${groupName}*! 🎉\n*Group 𝙳𝙴𝚂𝙲𝚁𝙸𝙿𝚃𝙸𝙾𝙽*\n${groupDesc}\n\n> *ᴘᴏᴡᴇʀᴇᴅ ʙʏ Knight Bot*`;
             }
             
             // Try to send with image first (always try images)
@@ -133,7 +133,7 @@ async function handleJoinEvent(sock, id, participants) {
                     .replace(/{group}/g, groupName)
                     .replace(/{description}/g, groupDesc);
             } else {
-                fallbackMessage = `Welcome @${user} to ${groupName}! 🎉`;
+                fallbackMessage = `Bem-Vindo @${user} em ${groupName}! 🎉`;
             }
             
             await sock.sendMessage(id, {

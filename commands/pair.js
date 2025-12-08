@@ -5,13 +5,13 @@ async function pairCommand(sock, chatId, message, q) {
     try {
         if (!q) {
             return await sock.sendMessage(chatId, {
-                text: "Please provide valid WhatsApp number\nExample: .pair 91702395XXXX",
+                text: "Por favor me forneça um número válido de Whatsapp\nExample: .pair 91702395XXXX",
                 contextInfo: {
                     forwardingScore: 1,
                     isForwarded: true,
                     forwardedNewsletterMessageInfo: {
                         newsletterJid: '120363161513685998@newsletter',
-                        newsletterName: 'KnightBot MD',
+                        newsletterName: 'Ruhi Bot',
                         serverMessageId: -1
                     }
                 }
@@ -24,13 +24,13 @@ async function pairCommand(sock, chatId, message, q) {
 
         if (numbers.length === 0) {
             return await sock.sendMessage(chatId, {
-                text: "Invalid number❌️ Please use the correct format!",
+                text: "Número inválido❌️ Por favor use o formato correto!",
                 contextInfo: {
                     forwardingScore: 1,
                     isForwarded: true,
                     forwardedNewsletterMessageInfo: {
                         newsletterJid: '120363161513685998@newsletter',
-                        newsletterName: 'KnightBot MD',
+                        newsletterName: 'Ruhi Bot',
                         serverMessageId: -1
                     }
                 }
@@ -43,13 +43,13 @@ async function pairCommand(sock, chatId, message, q) {
 
             if (!result[0]?.exists) {
                 return await sock.sendMessage(chatId, {
-                    text: `That number is not registered on WhatsApp❗️`,
+                    text: `Esse número não está registrado no Whatsapp❗️`,
                     contextInfo: {
                         forwardingScore: 1,
                         isForwarded: true,
                         forwardedNewsletterMessageInfo: {
                             newsletterJid: '120363161513685998@newsletter',
-                            newsletterName: 'KnightBot MD',
+                            newsletterName: 'Ruhi Bot',
                             serverMessageId: -1
                         }
                     }
@@ -63,7 +63,7 @@ async function pairCommand(sock, chatId, message, q) {
                     isForwarded: true,
                     forwardedNewsletterMessageInfo: {
                         newsletterJid: '120363161513685998@newsletter',
-                        newsletterName: 'KnightBot MD',
+                        newsletterName: 'Ruhi Bot',
                         serverMessageId: -1
                     }
                 }
@@ -86,7 +86,7 @@ async function pairCommand(sock, chatId, message, q) {
                             isForwarded: true,
                             forwardedNewsletterMessageInfo: {
                                 newsletterJid: '120363161513685998@newsletter',
-                                newsletterName: 'KnightBot MD',
+                                newsletterName: 'Ruhi Bot',
                                 serverMessageId: -1
                             }
                         }
@@ -107,7 +107,7 @@ async function pairCommand(sock, chatId, message, q) {
                         isForwarded: true,
                         forwardedNewsletterMessageInfo: {
                             newsletterJid: '120363161513685998@newsletter',
-                            newsletterName: 'KnightBot MD',
+                            newsletterName: 'Ruhi Bot',
                             serverMessageId: -1
                         }
                     }
@@ -123,7 +123,7 @@ async function pairCommand(sock, chatId, message, q) {
                 isForwarded: true,
                 forwardedNewsletterMessageInfo: {
                     newsletterJid: '120363161513685998@newsletter',
-                    newsletterName: 'KnightBot MD',
+                    newsletterName: 'Ruhi Bot',
                     serverMessageId: -1
                 }
             }

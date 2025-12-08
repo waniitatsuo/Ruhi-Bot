@@ -15,7 +15,7 @@ async function characterCommand(sock, chatId, message) {
     
     if (!userToAnalyze) {
         await sock.sendMessage(chatId, { 
-            text: 'Please mention someone or reply to their message to analyze their character!', 
+            text: '❕ Marque ou mencione alguém para analisar seu caráter!', 
             ...channelInfo 
         });
         return;

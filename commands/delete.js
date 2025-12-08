@@ -6,12 +6,12 @@ async function deleteCommand(sock, chatId, message, senderId) {
         const { isSenderAdmin, isBotAdmin } = await isAdmin(sock, chatId, senderId);
 
         if (!isBotAdmin) {
-            await sock.sendMessage(chatId, { text: 'I need to be an admin to delete messages.' }, { quoted: message });
+            await sock.sendMessage(chatId, { text: '❗ Eu preciso ser adm para oprimir o beta.' }, { quoted: message });
             return;
         }
 
         if (!isSenderAdmin) {
-            await sock.sendMessage(chatId, { text: 'Only admins can use the .delete command.' }, { quoted: message });
+            await sock.sendMessage(chatId, { text: '❌ Só adms podem usar esse comando.' }, { quoted: message });
             return;
         }
 
@@ -40,7 +40,7 @@ async function deleteCommand(sock, chatId, message, senderId) {
         // If no number provided and not replying/mentioning, show usage message
         else if (countArg === null && !repliedParticipant && !mentioned) {
             await sock.sendMessage(chatId, { 
-                text: '❌ Please specify the number of messages to delete.\n\nUsage:\n• `.del 5` - Delete last 5 messages from group\n• `.del 3 @user` - Delete last 3 messages from @user\n• `.del 2` (reply to message) - Delete last 2 messages from replied user' 
+                text: '❌ Por favor especifique a quantidade de mensagens para deletar\n\nUse:\n• `.del 5` - detela as 5 mensagens do grupo\n• `.del 3 @membro` - Deleta as últimas 3 mensagens do @membro\n• `.del 2` (marque a mensagem) - Deleta as últimas 3 mensagens do membro marcado' 
             }, { quoted: message });
             return;
         }
@@ -124,8 +124,8 @@ async function deleteCommand(sock, chatId, message, senderId) {
 
         if (toDelete.length === 0) {
             const errorMsg = deleteGroupMessages 
-                ? 'No recent messages found in the group to delete.' 
-                : 'No recent messages found for the target user.';
+                ? '❕ Não há mensagens recentes encontradas no grupo para apagar.' 
+                : '❕ Não há mensagens recentes encontradas no membro marcado.';
             await sock.sendMessage(chatId, { text: errorMsg }, { quoted: message });
             return;
         }
@@ -152,7 +152,7 @@ async function deleteCommand(sock, chatId, message, senderId) {
 
     
     } catch (err) {
-        await sock.sendMessage(chatId, { text: 'Failed to delete messages.' }, { quoted: message });
+        await sock.sendMessage(chatId, { text: '❌ Falha ao apagar as mensagens.' }, { quoted: message });
     }
 }
 

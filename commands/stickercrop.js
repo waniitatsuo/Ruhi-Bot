@@ -31,13 +31,13 @@ async function stickercropCommand(sock, chatId, message) {
 
     if (!mediaMessage) {
         await sock.sendMessage(chatId, { 
-            text: 'Please reply to an image/video/sticker with .crop, or send an image/video/sticker with .crop as the caption.',
+            text: 'Por favor, marque uma imagem/vídeo/sticker com .crop, ou mande uma imagem/vídeo/sticker com ".crop" na legenda!',
             contextInfo: {
                 forwardingScore: 999,
                 isForwarded: true,
                 forwardedNewsletterMessageInfo: {
                     newsletterJid: '120363161513685998@newsletter',
-                    newsletterName: 'KnightBot MD',
+                    newsletterName: 'Ruhi Bot',
                     serverMessageId: -1
                 }
             }
@@ -53,13 +53,13 @@ async function stickercropCommand(sock, chatId, message) {
 
         if (!mediaBuffer) {
             await sock.sendMessage(chatId, { 
-                text: 'Failed to download media. Please try again.',
+                text: 'Deu ruim para baixar a mídia, tente novamente.',
                 contextInfo: {
                     forwardingScore: 999,
                     isForwarded: true,
                     forwardedNewsletterMessageInfo: {
                         newsletterJid: '120363161513685998@newsletter',
-                        newsletterName: 'KnightBot MD',
+                        newsletterName: 'Ruhi Bot',
                         serverMessageId: -1
                     }
                 }
@@ -139,7 +139,7 @@ async function stickercropCommand(sock, chatId, message) {
         
         // If still too large, we'll send it anyway but log a warning
         if (finalSizeKB > 1000) { // 1MB limit for WhatsApp stickers
-            console.log(`⚠️ Warning: Sticker size (${Math.round(finalSizeKB)} KB) exceeds recommended limit but will be sent anyway`);
+            console.log(`⚠️ Aviso, o tamanho do sticker (${Math.round(finalSizeKB)} KB) excedeu o limite recomendado mas ainda será enviado da mesma forma`);
         }
 
         // Add metadata using webpmux
@@ -149,8 +149,8 @@ async function stickercropCommand(sock, chatId, message) {
         // Create metadata
         const json = {
             'sticker-pack-id': crypto.randomBytes(32).toString('hex'),
-            'sticker-pack-name': settings.packname || 'KnightBot',
-            'emojis': ['✂️']
+            'sticker-pack-name': settings.packname || 'Ruhi Bot',
+            'emojis': ['🐯']
         };
 
         // Create exif buffer
@@ -181,13 +181,13 @@ async function stickercropCommand(sock, chatId, message) {
     } catch (error) {
         console.error('Error in stickercrop command:', error);
         await sock.sendMessage(chatId, { 
-            text: 'Failed to crop sticker! Try with an image.',
+            text: 'Deu ruim pra cortar o Sticker... tente com uma imagem.',
             contextInfo: {
                 forwardingScore: 999,
                 isForwarded: true,
                 forwardedNewsletterMessageInfo: {
                     newsletterJid: '120363161513685998@newsletter',
-                    newsletterName: 'KnightBot MD',
+                    newsletterName: 'Ruhi Bot',
                     serverMessageId: -1
                 }
             }
@@ -235,8 +235,8 @@ async function stickercropFromBuffer(inputBuffer, isAnimated) {
     await img.load(webpBuffer);
     const json = {
         'sticker-pack-id': crypto.randomBytes(32).toString('hex'),
-        'sticker-pack-name': settings.packname || 'KnightBot',
-        'emojis': ['✂️']
+        'sticker-pack-name': settings.packname || 'Ruhi Bot',
+        'emojis': ['🐯']
     };
     const exifAttr = Buffer.from([0x49, 0x49, 0x2A, 0x00, 0x08, 0x00, 0x00, 0x00, 0x01, 0x00, 0x41, 0x57, 0x07, 0x00, 0x00, 0x00, 0x00, 0x00, 0x16, 0x00, 0x00, 0x00]);
     const jsonBuffer = Buffer.from(JSON.stringify(json), 'utf8');

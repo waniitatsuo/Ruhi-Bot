@@ -12,7 +12,7 @@ async function spotifyCommand(sock, chatId, message) {
         const query = rawText.slice(used.length).trim();
 
         if (!query) {
-            await sock.sendMessage(chatId, { text: 'Usage: .spotify <song/artist/keywords>\nExample: .spotify con calma' }, { quoted: message });
+            await sock.sendMessage(chatId, { text: 'Use: .spotify <song/artista/palavras chaves>\nExample: .spotify Linger in The Rain' }, { quoted: message });
             return;
         }
 
@@ -26,7 +26,7 @@ async function spotifyCommand(sock, chatId, message) {
         const r = data.result;
         const audioUrl = r.audio;
         if (!audioUrl) {
-            await sock.sendMessage(chatId, { text: 'No downloadable audio found for this query.' }, { quoted: message });
+            await sock.sendMessage(chatId, { text: 'Não tem coisa baixável para essa pesquisa.' }, { quoted: message });
             return;
         }
 
@@ -48,7 +48,7 @@ async function spotifyCommand(sock, chatId, message) {
 
     } catch (error) {
         console.error('[SPOTIFY] error:', error?.message || error);
-        await sock.sendMessage(chatId, { text: 'Failed to fetch Spotify audio. Try another query later.' }, { quoted: message });
+        await sock.sendMessage(chatId, { text: 'Falha ao pegar o música do Spotify, Tente uma nova busca depois.' }, { quoted: message });
     }
 }
 

@@ -5,15 +5,15 @@ const PMBLOCKER_PATH = './data/pmblocker.json';
 
 function readState() {
     try {
-        if (!fs.existsSync(PMBLOCKER_PATH)) return { enabled: false, message: '⚠️ Direct messages are blocked!\nYou cannot DM this bot. Please contact the owner in group chats only.' };
+        if (!fs.existsSync(PMBLOCKER_PATH)) return { enabled: false, message: '⚠️ Mensagens Diretas com o bot não está ativado!\n\n Você não pode contactar o meu PV, caso queira mais informações, Mande mensagem para o meu Dono ou encontre-me em um grupo do whatsapp.' };
         const raw = fs.readFileSync(PMBLOCKER_PATH, 'utf8');
         const data = JSON.parse(raw || '{}');
         return {
             enabled: !!data.enabled,
-            message: typeof data.message === 'string' && data.message.trim() ? data.message : '⚠️ Direct messages are blocked!\nYou cannot DM this bot. Please contact the owner in group chats only.'
+            message: typeof data.message === 'string' && data.message.trim() ? data.message : '⚠️ Mensagens Diretas com o bot não está ativado!\n\n Você não pode contactar o meu PV, caso queira mais informações, Mande mensagem para o meu Dono ou encontre-me em um grupo do whatsapp.'
         };
     } catch {
-        return { enabled: false, message: '⚠️ Direct messages are blocked!\nYou cannot DM this bot. Please contact the owner in group chats only.' };
+        return { enabled: false, message: '⚠️ Mensagens Diretas com o bot não está ativado!\n\n Você não pode contactar o meu PV, caso queira mais informações, Mande mensagem para o meu Dono ou encontre-me em um grupo do whatsapp.' };
     }
 }
 

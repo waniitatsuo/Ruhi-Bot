@@ -19,7 +19,7 @@ async function stickerTelegramCommand(sock, chatId, msg) {
         
         if (!args[0]) {
             await sock.sendMessage(chatId, { 
-                text: '⚠️ Please enter the Telegram sticker URL!\n\nExample: .tg https://t.me/addstickers/Porcientoreal' 
+                text: '⚠️ Por favor entre um link de telegram!\n\nExample: .tg https://t.me/addstickers/Porcientoreal' 
             });
             return;
         }
@@ -27,7 +27,7 @@ async function stickerTelegramCommand(sock, chatId, msg) {
         // Validate URL format
         if (!args[0].match(/(https:\/\/t.me\/addstickers\/)/gi)) {
             await sock.sendMessage(chatId, { 
-                text: '❌ Invalid URL! Make sure it\'s a Telegram sticker URL.' 
+                text: '❌ URL INVÁLIDO! assegure-se que é um link de sticker válido do telegram.' 
             });
             return;
         }
@@ -129,7 +129,7 @@ async function stickerTelegramCommand(sock, chatId, msg) {
                     const metadata = {
                         'sticker-pack-id': crypto.randomBytes(32).toString('hex'),
                         'sticker-pack-name': settings.packname,
-                        'emojis': sticker.emoji ? [sticker.emoji] : ['🤖']
+                        'emojis': sticker.emoji ? [sticker.emoji] : ['🐯']
                     };
 
                     // Create exif buffer

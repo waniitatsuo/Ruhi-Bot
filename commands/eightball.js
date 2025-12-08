@@ -1,17 +1,17 @@
 const eightBallResponses = [
-    "Yes, definitely!",
-    "No way!",
-    "Ask again later.",
-    "It is certain.",
-    "Very doubtful.",
-    "Without a doubt.",
-    "My reply is no.",
-    "Signs point to yes."
+    "*SIM COM CERTEZA*",
+    "*Nem ferrando*",
+    "*Pergunte depois*",
+    "*Isso é certeza*",
+    "*Bem duvidoso...",
+    "*Nenhum pouco duvidoso",
+    "*Minha resposta é não.",
+    "*Os sinais dizem que sim.*"
 ];
 
 async function eightBallCommand(sock, chatId, question) {
     if (!question) {
-        await sock.sendMessage(chatId, { text: 'Please ask a question!' });
+        await sock.sendMessage(chatId, { text: 'Pergunte-me algo seu betinha! 🐯' });
         return;
     }
 

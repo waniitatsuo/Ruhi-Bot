@@ -5,7 +5,7 @@ async function demoteCommand(sock, chatId, mentionedJids, message) {
         // First check if it's a group
         if (!chatId.endsWith('@g.us')) {
             await sock.sendMessage(chatId, { 
-                text: 'This command can only be used in groups!'
+                text: '❌ Esse comando so pode ser usado em grupo!'
             });
             return;
         }
@@ -16,21 +16,21 @@ async function demoteCommand(sock, chatId, mentionedJids, message) {
             
             if (!adminStatus.isBotAdmin) {
                 await sock.sendMessage(chatId, { 
-                    text: '❌ Error: Please make the bot an admin first to use this command.'
+                    text: '❌ ME DA ADM PARA QUE EU POSSA PROMOVER O BETA PRA SIGMA 🥱'
                 });
                 return;
             }
 
             if (!adminStatus.isSenderAdmin) {
                 await sock.sendMessage(chatId, { 
-                    text: '❌ Error: Only group admins can use the demote command.'
+                    text: '❌ Só adms podem tirar o adms dos outros 😏'
                 });
                 return;
             }
         } catch (adminError) {
             console.error('Error checking admin status:', adminError);
             await sock.sendMessage(chatId, { 
-                text: '❌ Error: Please make sure the bot is an admin of this group.'
+                text: '❌ Tenha certeza que eu to de adm o lerdo.'
             });
             return;
         }
@@ -49,7 +49,7 @@ async function demoteCommand(sock, chatId, mentionedJids, message) {
         // If no user found through either method
         if (userToDemote.length === 0) {
             await sock.sendMessage(chatId, { 
-                text: '❌ Error: Please mention the user or reply to their message to demote!'
+                text: '❌ Mencione o usuário para que eu possa ~comer ele~ tirar o adm dele'
             });
             return;
         }
@@ -67,11 +67,11 @@ async function demoteCommand(sock, chatId, mentionedJids, message) {
         // Add delay to avoid rate limiting
         await new Promise(resolve => setTimeout(resolve, 1000));
 
-        const demotionMessage = `*『 GROUP DEMOTION 』*\n\n` +
-            `👤 *Demoted User${userToDemote.length > 1 ? 's' : ''}:*\n` +
+        const demotionMessage = `*『 FOI NERFADO KKKKKK 』*\n\n` +
+            `👤 *Usuário beta: ${userToDemote.length > 1 ? 's' : ''}:*\n` +
             `${usernames.map(name => `• ${name}`).join('\n')}\n\n` +
-            `👑 *Demoted By:* @${message.key.participant ? message.key.participant.split('@')[0] : message.key.remoteJid.split('@')[0]}\n\n` +
-            `📅 *Date:* ${new Date().toLocaleString()}`;
+            `👑 *Perdeu os direitos por:* @${message.key.participant ? message.key.participant.split('@')[0] : message.key.remoteJid.split('@')[0]}\n\n` +
+            `📅 *Data:* ${new Date().toLocaleString()}`;
         
         await sock.sendMessage(chatId, { 
             text: demotionMessage,
@@ -83,7 +83,7 @@ async function demoteCommand(sock, chatId, mentionedJids, message) {
             await new Promise(resolve => setTimeout(resolve, 2000));
             try {
                 await sock.sendMessage(chatId, { 
-                    text: '❌ Rate limit reached. Please try again in a few seconds.'
+                    text: '❌ Tente novamente daqui a pouco.'
                 });
             } catch (retryError) {
                 console.error('Error sending retry message:', retryError);
@@ -91,7 +91,7 @@ async function demoteCommand(sock, chatId, mentionedJids, message) {
         } else {
             try {
                 await sock.sendMessage(chatId, { 
-                    text: '❌ Failed to demote user(s). Make sure the bot is admin and has sufficient permissions.'
+                    text: '❌ Falha ao tirar os direitos do lek, o cara é mais forte que eu 😭'
                 });
             } catch (sendError) {
                 console.error('Error sending error message:', sendError);

@@ -9,14 +9,14 @@ async function facebookCommand(sock, chatId, message) {
         
         if (!url) {
             return await sock.sendMessage(chatId, { 
-                text: "Please provide a Facebook video URL.\nExample: .fb https://www.facebook.com/..."
+                text: "❗ Por favor me mande um link de video do Facebook.\nExample: .fb https://www.facebook.com/..."
             }, { quoted: message });
         }
 
         // Validate Facebook URL
         if (!url.includes('facebook.com')) {
             return await sock.sendMessage(chatId, { 
-                text: "That is not a Facebook link."
+                text: "❌ isso não é um link de Facebook."
             }, { quoted: message });
         }
 
@@ -88,13 +88,13 @@ async function facebookCommand(sock, chatId, message) {
 
         if (!fbvid) {
             return await sock.sendMessage(chatId, { 
-                text: '❌ Failed to get video URL from Facebook.\n\nPossible reasons:\n• Video is private or deleted\n• Link is invalid\n• Video is not available for download\n\nPlease try a different Facebook video link.'
+                text: '❌ Falha ao pegar o video do Facebook.\n\nRazões possíveis:\n• Video está privado or deletado\n• Link é invalido\n• Video não está disponivel para download\n\nTente um outro link de video do Facebook.'
             }, { quoted: message });
         }
 
         // Try URL method first (more reliable)
         try {
-            const caption = title ? `𝗗𝗢𝗪𝗡𝗟𝗢𝗔𝗗𝗘𝗗 𝗕𝗬 𝗞𝗡𝗜𝗚𝗛𝗧-𝗕𝗢𝗧\n\n📝 Title: ${title}` : "𝗗𝗢𝗪𝗡𝗟𝗢𝗔𝗗𝗘𝗗 𝗕𝗬 𝗞𝗡𝗜𝗚𝗛𝗧-𝗕𝗢𝗧";
+            const caption = title ? `BAIXADO POR RUHI BOT\n\n📝 Título: ${title}` : "BAIXADO POR RUHI BOT";
             
             await sock.sendMessage(chatId, {
                 video: { url: fbvid },
@@ -145,7 +145,7 @@ async function facebookCommand(sock, chatId, message) {
                 }
 
                 // Send the video
-                const caption = title ? `𝗗𝗢𝗪𝗡𝗟𝗢𝗔𝗗𝗘𝗗 𝗕𝗬 𝗞𝗡𝗜𝗚𝗛𝗧-𝗕𝗢𝗧\n\n📝 Title: ${title}` : "𝗗𝗢𝗪𝗡𝗟𝗢𝗔𝗗𝗘𝗗 𝗕𝗬 𝗞𝗡𝗜𝗚𝗛𝗧-𝗕𝗢𝗧";
+                const caption = title ? `BAIXADO POR RUHI BOT\n\n📝 Título: ${title}` : "BAIXADO POR RUHI BOT";
                 
                 await sock.sendMessage(chatId, {
                     video: { url: tempFile },
@@ -169,7 +169,7 @@ async function facebookCommand(sock, chatId, message) {
     } catch (error) {
         console.error('Error in Facebook command:', error);
         await sock.sendMessage(chatId, { 
-            text: "An error occurred. API might be down. Error: " + error.message
+            text: "😭 Um erro ocorreu na api, erro: " + error.message
         }, { quoted: message });
     }
 }

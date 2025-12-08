@@ -8,7 +8,7 @@ const channelInfo = {
         isForwarded: true,
         forwardedNewsletterMessageInfo: {
             newsletterJid: '120363161513685998@newsletter',
-            newsletterName: 'KnightBot MD',
+            newsletterName: 'Ruhi Bot',
             serverMessageId: -1
         }
     }
@@ -32,7 +32,7 @@ async function autoStatusCommand(sock, chatId, msg, args) {
         
         if (!msg.key.fromMe && !isOwner) {
             await sock.sendMessage(chatId, { 
-                text: '❌ This command can only be used by the owner!',
+                text: '❌ Só meu dono pode usar ele.',
                 ...channelInfo
             });
             return;

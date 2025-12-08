@@ -10,7 +10,7 @@ async function aliveCommand(sock, chatId, message) {
                        `• Antilink Protection\n` +
                        `• Fun Commands\n` +
                        `• And more!\n\n` +
-                       `Type *.menu* for full command list`;
+                       `Digite *.menu* para pegar todos os comandos`;
 
         await sock.sendMessage(chatId, {
             text: message1,
@@ -19,14 +19,14 @@ async function aliveCommand(sock, chatId, message) {
                 isForwarded: true,
                 forwardedNewsletterMessageInfo: {
                     newsletterJid: '120363161513685998@newsletter',
-                    newsletterName: 'KnightBot MD',
+                    newsletterName: 'Ruhi Bot',
                     serverMessageId: -1
                 }
             }
         }, { quoted: message });
     } catch (error) {
         console.error('Error in alive command:', error);
-        await sock.sendMessage(chatId, { text: 'Bot is alive and running!' }, { quoted: message });
+        await sock.sendMessage(chatId, { text: '🎊 Eu to viva!' }, { quoted: message });
     }
 }
 

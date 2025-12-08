@@ -5,9 +5,9 @@ const path = require('path');
 async function helpCommand(sock, chatId, message) {
     const helpMessage = `
 ╔═══════════════════╗
-   *🤖 ${settings.botName || 'KnightBot-MD'}*  
-   Version: *${settings.version || '3.0.0'}*
-   by ${settings.botOwner || 'Mr Unique Hacker'}
+   *🐯 ${settings.botName}*  
+   Version: *${settings.version}*
+   by ${settings.botOwner}
    YT : ${global.ytch}
 ╚═══════════════════╝
 
@@ -17,24 +17,25 @@ async function helpCommand(sock, chatId, message) {
 🌐 *General Commands*:
 ║ ➤ .help or .menu
 ║ ➤ .ping
-║ ➤ .alive
-║ ➤ .tts <text>
+ ➤ .alive removido
+ ➤ .tts <text> removido
 ║ ➤ .owner
-║ ➤ .joke
+ ➤ .joke removido
 ║ ➤ .quote
-║ ➤ .fact
-║ ➤ .weather <city>
-║ ➤ .news
-║ ➤ .attp <text>
-║ ➤ .lyrics <song_title>
-║ ➤ .8ball <question>
-║ ➤ .groupinfo
+ ➤ .fact removido
+ ➤ .weather <city> removido
+ ➤ .news removido
+ ➤ .attp <text> removido
+║ ➤ .lyrics <song_title> 
+ ➤ .8ball <question> removido
+║ ➤ .groupinfo 
 ║ ➤ .staff or .admins 
-║ ➤ .vv
-║ ➤ .trt <text> <lang>
-║ ➤ .ss <link>
-║ ➤ .jid
-║ ➤ .url
+ ➤ .vv removido
+ ➤ .trt <text> <lang> removido
+ ➤ .ss <link> removido
+ ➤ .jid removido
+ ➤ .url removido
+║ ➤ .rir
 ╚═══════════════════╝ 
 
 ╔═══════════════════╗
@@ -88,20 +89,21 @@ async function helpCommand(sock, chatId, message) {
 
 ╔═══════════════════╗
 🎨 *Image/Sticker Commands*:
-║ ➤ .blur <image>
-║ ➤ .simage <reply to sticker>
+ ➤ .blur <image> removido
+║ ➤ .simage <reply to sticker> 
 ║ ➤ .sticker <reply to image>
-║ ➤ .removebg
-║ ➤ .remini
+ ➤ .removebg 
+ ➤ .remini 
 ║ ➤ .crop <reply to image>
 ║ ➤ .tgsticker <Link>
-║ ➤ .meme
+ ➤ .meme
 ║ ➤ .take <packname> 
-║ ➤ .emojimix <emj1>+<emj2>
+ ➤ .emojimix <emj1>+<emj2>
 ║ ➤ .igs <insta link>
 ║ ➤ .igsc <insta link>
 ╚═══════════════════╝  
 
+- removido -
 ╔═══════════════════╗
 🖼️ *Pies Commands*:
 ║ ➤ .pies <country>
@@ -118,11 +120,13 @@ async function helpCommand(sock, chatId, message) {
 ║ ➤ .hangman
 ║ ➤ .guess <letter>
 ║ ➤ .trivia
-║ ➤ .answer <answer>
+║ ➤ .opine
 ║ ➤ .truth
 ║ ➤ .dare
+║ ➤ .termo
 ╚═══════════════════╝
 
+- removido
 ╔═══════════════════╗
 🤖 *AI Commands*:
 ║ ➤ .gpt <question>
@@ -132,6 +136,7 @@ async function helpCommand(sock, chatId, message) {
 ║ ➤ .sora <prompt>
 ╚═══════════════════╝
 
+- removido
 ╔═══════════════════╗
 🎯 *Fun Commands*:
 ║ ➤ .compliment @user
@@ -147,6 +152,7 @@ async function helpCommand(sock, chatId, message) {
 ║ ➤ .stupid @user [text]
 ╚═══════════════════╝
 
+- removido
 ╔═══════════════════╗
 🔤 *Textmaker*:
 ║ ➤ .metallic <text>
@@ -181,6 +187,7 @@ async function helpCommand(sock, chatId, message) {
 ║ ➤ .ytmp4 <Link>
 ╚═══════════════════╝
 
+- removido -
 ╔═══════════════════╗
 🧩 *MISC*:
 ║ ➤ .heart
@@ -201,6 +208,8 @@ async function helpCommand(sock, chatId, message) {
 ║ ➤ .triggered
 ╚═══════════════════╝
 
+
+- removido - 
 ╔═══════════════════╗
 🖼️ *ANIME*:
 ║ ➤ .neko
@@ -216,6 +225,8 @@ async function helpCommand(sock, chatId, message) {
 ║ ➤ .facepalm 
 ╚═══════════════════╝
 
+
+- removido - 
 ╔═══════════════════╗
 💻 *Github Commands:*
 ║ ➤ .git
@@ -223,17 +234,15 @@ async function helpCommand(sock, chatId, message) {
 ║ ➤ .sc
 ║ ➤ .script
 ║ ➤ .repo
-╚═══════════════════╝
-
-Join our channel for updates:`;
+╚═══════════════════╝`;
 
     try {
         const imagePath = path.join(__dirname, '../assets/bot_image.jpg');
         
         const buttons = [
-            { buttonId: 'channel', buttonText: { displayText: '📢 Join Channel' }, type: 1 },
-            { buttonId: 'owner', buttonText: { displayText: '📞 Owner' }, type: 1 },
-            { buttonId: 'support', buttonText: { displayText: '🔗 Support' }, type: 1 }
+            { buttonId: 'Canal', buttonText: { displayText: '📢 Entre no Canal' }, type: 1 },
+            { buttonId: 'Dono', buttonText: { displayText: '📞 Dono' }, type: 1 },
+            { buttonId: 'Suporte', buttonText: { displayText: '🔗 Suporte' }, type: 1 }
         ];
 
         if (fs.existsSync(imagePath)) {

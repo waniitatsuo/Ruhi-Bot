@@ -16,7 +16,7 @@ async function promoteCommand(sock, chatId, mentionedJids, message) {
     // If no user found through either method
     if (userToPromote.length === 0) {
         await sock.sendMessage(chatId, { 
-            text: 'Please mention the user or reply to their message to promote!'
+            text: 'Por favor mencione o usuário ou marque a mensagem dele para promover!'
         });
         return;
     }
@@ -33,18 +33,18 @@ async function promoteCommand(sock, chatId, mentionedJids, message) {
         // Get promoter's name (the bot user in this case)
         const promoterJid = sock.user.id;
         
-        const promotionMessage = `*『 GROUP PROMOTION 』*\n\n` +
-            `👥 *Promoted User${userToPromote.length > 1 ? 's' : ''}:*\n` +
+        const promotionMessage = `*『 PROMOVIDO TIME 』*\n\n` +
+            `👥 *Usuário promovido: ${userToPromote.length > 1 ? 's' : ''}:*\n` +
             `${usernames.map(name => `• ${name}`).join('\n')}\n\n` +
-            `👑 *Promoted By:* @${promoterJid.split('@')[0]}\n\n` +
-            `📅 *Date:* ${new Date().toLocaleString()}`;
+            `👑 *Promovivo por:* @${promoterJid.split('@')[0]}\n\n` +
+            `📅 *Data:* ${new Date().toLocaleString()}`;
         await sock.sendMessage(chatId, { 
             text: promotionMessage,
             mentions: [...userToPromote, promoterJid]
         });
     } catch (error) {
         console.error('Error in promote command:', error);
-        await sock.sendMessage(chatId, { text: 'Failed to promote user(s)!'});
+        await sock.sendMessage(chatId, { text: 'Falha ao promover o Usuário(a)!'});
     }
 }
 
@@ -78,11 +78,11 @@ async function handlePromotionEvent(sock, groupId, participants, author) {
             promotedBy = 'System';
         }
 
-        const promotionMessage = `*『 GROUP PROMOTION 』*\n\n` +
-            `👥 *Promoted User${participants.length > 1 ? 's' : ''}:*\n` +
+        const promotionMessage = `*『  PROMOVIDO TIME  』*\n\n` +
+            `👥 *Usuário promovido: ${participants.length > 1 ? 's' : ''}:*\n` +
             `${promotedUsernames.map(name => `• ${name}`).join('\n')}\n\n` +
-            `👑 *Promoted By:* ${promotedBy}\n\n` +
-            `📅 *Date:* ${new Date().toLocaleString()}`;
+            `👑 *Promovido por:* ${promotedBy}\n\n` +
+            `📅 *Data:* ${new Date().toLocaleString()}`;
         
         await sock.sendMessage(groupId, {
             text: promotionMessage,

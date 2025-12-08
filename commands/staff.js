@@ -21,7 +21,7 @@ async function staffCommand(sock, chatId, msg) {
 
         // Create staff text
         const text = `
-≡ *GROUP ADMINS* _${groupMetadata.subject}_
+≡ *ADEMES DO GRUPO* _${groupMetadata.subject}_ *!!!!*
 
 ┌─⊷ *ADMINS*
 ▢ ${listAdmin}
@@ -37,7 +37,7 @@ async function staffCommand(sock, chatId, msg) {
 
     } catch (error) {
         console.error('Error in staff command:', error);
-        await sock.sendMessage(chatId, { text: 'Failed to get admin list!' });
+        await sock.sendMessage(chatId, { text: 'Deu ruim para pegar a lista de ADM...' });
     }
 }
 

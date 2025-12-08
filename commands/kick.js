@@ -6,12 +6,12 @@ async function kickCommand(sock, chatId, senderId, mentionedJids, message) {
         const { isSenderAdmin, isBotAdmin } = await isAdmin(sock, chatId, senderId);
 
         if (!isBotAdmin) {
-            await sock.sendMessage(chatId, { text: 'Please make the bot an admin first.' }, { quoted: message });
+            await sock.sendMessage(chatId, { text: '❌ ME DA ADM PRIMEIRO PARA EU QUITAR O CARA 😭😭' }, { quoted: message });
             return;
         }
 
         if (!isSenderAdmin) {
-            await sock.sendMessage(chatId, { text: 'Only group admins can use the kick command.' }, { quoted: message });
+            await sock.sendMessage(chatId, { text: '❌ Calma betinha, só adm pode usar esse comando.' }, { quoted: message });
             return;
         }
     }
@@ -27,7 +27,7 @@ async function kickCommand(sock, chatId, senderId, mentionedJids, message) {
     
     if (usersToKick.length === 0) {
         await sock.sendMessage(chatId, { 
-            text: 'Please mention the user or reply to their message to kick!'
+            text: '❌ Por favor mencione o usuário ou marque a mensagem dele para kickar (la ele) ele!'
         }, { quoted: message });
         return;
     }
@@ -103,7 +103,7 @@ async function kickCommand(sock, chatId, senderId, mentionedJids, message) {
 
     if (isTryingToKickBot) {
         await sock.sendMessage(chatId, { 
-            text: "I can't kick myself🤖"
+            text: "*Tu acha mesmo que eu vou me kickar? KKKKKKKKKKKKKKKKKKKK* 🤣🤣🤣🤣"
         }, { quoted: message });
         return;
     }
@@ -116,13 +116,13 @@ async function kickCommand(sock, chatId, senderId, mentionedJids, message) {
         }));
         
         await sock.sendMessage(chatId, { 
-            text: `${usernames.join(', ')} has been kicked successfully!`,
+            text: `${usernames.join(', ')} *Foi kickado (ixi) com sucesso, muahahahaha!*`,
             mentions: usersToKick
         });
     } catch (error) {
         console.error('Error in kick command:', error);
         await sock.sendMessage(chatId, { 
-            text: 'Failed to kick user(s)!'
+            text: '❌ Aff n deu pra kickar ele 😭'
         });
     }
 }
