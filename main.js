@@ -150,6 +150,7 @@ const termoCommand = require('./commands/termo');
 const salvarComando = require('./commands/salvar'); // Ajuste o caminho se a pasta tiver outro nome
 const googleCommand = require('./commands/google');
 const opineCommand = require('./commands/opine');
+const verificarGatilhos = require('./triggers');
 
 // Global settings
 global.packname = settings.packname;
