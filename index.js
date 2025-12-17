@@ -70,7 +70,7 @@ setInterval(() => {
     }
 }, 30_000) // check every 30 seconds
 
-let phoneNumber = "911234567890"
+let phoneNumber = "559888056664"
 let owner = JSON.parse(fs.readFileSync('./data/owner.json'))
 
 global.botname = "Ruhi Bot"
@@ -148,39 +148,6 @@ async function startXeonBotInc() {
                 XeonBotInc.msgRetryCounterCache.clear()
             }
 
-            // --- INÍCIO DA INTERAÇÃO "SE MATA" ---
-            // 1. Pegar texto e ID do Bot
-            const mType = Object.keys(mek.message)[0]
-            const body = (mType === 'conversation') ? mek.message.conversation :
-                         (mType === 'extendedTextMessage') ? mek.message.extendedTextMessage.text : ''
-            
-            const texto = body ? body.toLowerCase() : ''
-            
-            // Pega o número do bot "limpo" (sem :2 ou coisa do tipo)
-            const botNumber = XeonBotInc.user.id.split(':')[0]
-            const botIdCompleto = botNumber + '@s.whatsapp.net'
-
-            // 2. VERIFICAÇÕES DE ALVO
-            // A. Verificando se marcou com @
-            const userMentions = mek.message[mType]?.contextInfo?.mentionedJid || []
-            const botFoiMarcado = userMentions.some(id => id.includes(botNumber))
-
-            // B. Verificando se respondeu a uma mensagem do bot
-            const participantReply = mek.message[mType]?.contextInfo?.participant || ''
-            const botFoiRespondido = participantReply.includes(botNumber)
-
-            // 3. A Lógica Final: Texto + (Marcou OU Respondeu)
-            if (texto.includes('se mata') && (botFoiMarcado || botFoiRespondido)) {
-                console.log(`[RESPOSTA AUTO] O bot foi mandado se matar (Via menção ou reply).`)
-                
-                await XeonBotInc.sendMessage(mek.key.remoteJid, { 
-                    text: ':('
-                }, { quoted: mek })
-                
-                return 
-            }
-            // --- FIM DA INTERAÇÃO ---
-
             try {
                 await handleMessages(XeonBotInc, chatUpdate, true)
             } catch (err) {
@@ -194,7 +161,7 @@ async function startXeonBotInc() {
                             isForwarded: true,
                             forwardedNewsletterMessageInfo: {
                                 newsletterJid: '120363161513685998@newsletter',
-                                newsletterName: 'KnightBot MD',
+                                newsletterName: 'Ruhi Bot',
                                 serverMessageId: -1
                             }
                         }

@@ -9,8 +9,8 @@ const settings = {
   maxStoreMessages: 20, 
   storeWriteInterval: 10000,
   description: "Sou uma furra que trás alegria para os grupos do whatsapp!",
-  version: "3.0.5",
-  updateZipUrl: "https://github.com/mruniquehacker/Knightbot-MD/archive/refs/heads/main.zip",
+  version: "3.0.11",
+  updateZipUrl: "https://github.com/waniitatsuo/Ruhi-Bot/archive/refs/heads/main.zip",
 };
 
 module.exports = settings;

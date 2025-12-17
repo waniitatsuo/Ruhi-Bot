@@ -11,31 +11,17 @@ async function helpCommand(sock, chatId, message) {
    YT : ${global.ytch}
 ╚═══════════════════╝
 
-*Available Commands:*
+*Comandos válidos:*
 
 ╔═══════════════════╗
 🌐 *General Commands*:
-║ ➤ .help or .menu
 ║ ➤ .ping
- ➤ .alive removido
- ➤ .tts <text> removido
 ║ ➤ .owner
- ➤ .joke removido
 ║ ➤ .quote
- ➤ .fact removido
- ➤ .weather <city> removido
- ➤ .news removido
- ➤ .attp <text> removido
-║ ➤ .lyrics <song_title> 
- ➤ .8ball <question> removido
+║ ➤ .lyrics <titulo da música> 
 ║ ➤ .groupinfo 
-║ ➤ .staff or .admins 
- ➤ .vv removido
- ➤ .trt <text> <lang> removido
- ➤ .ss <link> removido
- ➤ .jid removido
- ➤ .url removido
-║ ➤ .rir
+║ ➤ .staff ou .admins 
+║ ➤ .vv ou .dxeuver (visu única)
 ╚═══════════════════╝ 
 
 ╔═══════════════════╗
@@ -64,6 +50,7 @@ async function helpCommand(sock, chatId, message) {
 ║ ➤ .setgdesc <description>
 ║ ➤ .setgname <new name>
 ║ ➤ .setgpp (reply to image)
+║ ➤ .salvar (sticker para resposta)
 ╚═══════════════════╝
 
 ╔═══════════════════╗
@@ -89,90 +76,28 @@ async function helpCommand(sock, chatId, message) {
 
 ╔═══════════════════╗
 🎨 *Image/Sticker Commands*:
- ➤ .blur <image> removido
 ║ ➤ .simage <reply to sticker> 
 ║ ➤ .sticker <reply to image>
- ➤ .removebg 
- ➤ .remini 
 ║ ➤ .crop <reply to image>
 ║ ➤ .tgsticker <Link>
- ➤ .meme
 ║ ➤ .take <packname> 
- ➤ .emojimix <emj1>+<emj2>
 ║ ➤ .igs <insta link>
 ║ ➤ .igsc <insta link>
 ╚═══════════════════╝  
 
-- removido -
-╔═══════════════════╗
-🖼️ *Pies Commands*:
-║ ➤ .pies <country>
-║ ➤ .china 
-║ ➤ .indonesia 
-║ ➤ .japan 
-║ ➤ .korea 
-║ ➤ .hijab
-╚═══════════════════╝
-
 ╔═══════════════════╗
 🎮 *Game Commands*:
-║ ➤ .tictactoe @user
-║ ➤ .hangman
-║ ➤ .guess <letter>
-║ ➤ .trivia
-║ ➤ .opine
-║ ➤ .truth
-║ ➤ .dare
+║ ➤ .jogodavelha @user
 ║ ➤ .termo
 ╚═══════════════════╝
 
-- removido
-╔═══════════════════╗
-🤖 *AI Commands*:
-║ ➤ .gpt <question>
-║ ➤ .gemini <question>
-║ ➤ .imagine <prompt>
-║ ➤ .flux <prompt>
-║ ➤ .sora <prompt>
-╚═══════════════════╝
-
-- removido
 ╔═══════════════════╗
 🎯 *Fun Commands*:
-║ ➤ .compliment @user
-║ ➤ .insult @user
-║ ➤ .flirt 
-║ ➤ .shayari
-║ ➤ .goodnight
-║ ➤ .roseday
-║ ➤ .character @user
-║ ➤ .wasted @user
-║ ➤ .ship @user
-║ ➤ .simp @user
-║ ➤ .stupid @user [text]
-╚═══════════════════╝
-
-- removido
-╔═══════════════════╗
-🔤 *Textmaker*:
-║ ➤ .metallic <text>
-║ ➤ .ice <text>
-║ ➤ .snow <text>
-║ ➤ .impressive <text>
-║ ➤ .matrix <text>
-║ ➤ .light <text>
-║ ➤ .neon <text>
-║ ➤ .devil <text>
-║ ➤ .purple <text>
-║ ➤ .thunder <text>
-║ ➤ .leaves <text>
-║ ➤ .1917 <text>
-║ ➤ .arena <text>
-║ ➤ .hacker <text>
-║ ➤ .sand <text>
-║ ➤ .blackpink <text>
-║ ➤ .glitch <text>
-║ ➤ .fire <text>
+║ ➤ .opine
+║ ➤ .rir
+║ ➤ .piada
+║ ➤ .8ball <question>
+║ ➤ .img
 ╚═══════════════════╝
 
 ╔═══════════════════╗
@@ -187,53 +112,10 @@ async function helpCommand(sock, chatId, message) {
 ║ ➤ .ytmp4 <Link>
 ╚═══════════════════╝
 
-- removido -
 ╔═══════════════════╗
 🧩 *MISC*:
-║ ➤ .heart
-║ ➤ .horny
-║ ➤ .circle
-║ ➤ .lgbt
-║ ➤ .lolice
-║ ➤ .its-so-stupid
-║ ➤ .namecard 
-║ ➤ .oogway
 ║ ➤ .tweet
 ║ ➤ .ytcomment 
-║ ➤ .comrade 
-║ ➤ .gay 
-║ ➤ .glass 
-║ ➤ .jail 
-║ ➤ .passed 
-║ ➤ .triggered
-╚═══════════════════╝
-
-
-- removido - 
-╔═══════════════════╗
-🖼️ *ANIME*:
-║ ➤ .neko
-║ ➤ .waifu
-║ ➤ .loli
-║ ➤ .nom 
-║ ➤ .poke 
-║ ➤ .cry 
-║ ➤ .kiss 
-║ ➤ .pat 
-║ ➤ .hug 
-║ ➤ .wink 
-║ ➤ .facepalm 
-╚═══════════════════╝
-
-
-- removido - 
-╔═══════════════════╗
-💻 *Github Commands:*
-║ ➤ .git
-║ ➤ .github
-║ ➤ .sc
-║ ➤ .script
-║ ➤ .repo
 ╚═══════════════════╝`;
 
     try {
@@ -269,3 +151,9 @@ async function helpCommand(sock, chatId, message) {
 }
 
 module.exports = helpCommand;
+
+// 1. Importe o arquivo lá no topo
+const verificarGatilhos = require('./triggers'); 
+
+// ... dentro da função connectToWhatsApp, onde você recebe as mensagens (upsert) ...
+
