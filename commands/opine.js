@@ -26,7 +26,7 @@ module.exports = async (sock, msg) => {
 
         // --- 2. SORTEAR A FIGURINHA ---
         // Vamos usar a pasta de stickers que já estão prontos (WebP)
-        const pastaOpiniao = path.join(__dirname, '..', 'media', 'stickers', 'opiniao');
+        const pastaOpiniao = path.join(__dirname, '..', 'media', 'images', 'opiniao');
 
         if (!fs.existsSync(pastaOpiniao)) {
             return await sock.sendMessage(from, { text: '❌ Pasta de opinião não localizada.' }, { quoted: msg });

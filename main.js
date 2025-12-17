@@ -158,17 +158,7 @@ global.channelLink = "https://waniiburro.carrd.co";
 global.ytch = "Waniiburro";
 
 // Add this near the top of main.js with other global configurations
-const channelInfo = {
-    contextInfo: {
-        forwardingScore: 1,
-        isForwarded: true,
-        forwardedNewsletterMessageInfo: {
-            newsletterJid: '120363161513685998@newsletter',
-            newsletterName: 'Ruhi Bot',
-            serverMessageId: -1
-        }
-    }
-};
+const channelInfo = { };
 
 async function handleMessages(sock, messageUpdate, printLog) {
     try {
@@ -1185,7 +1175,7 @@ async function handleMessages(sock, messageUpdate, printLog) {
                 await googleCommand(sock, chatId, message);
                 commandExecuted = true;
                 break;
-            case 'opine':
+            case userMessage === 'opine':
                 await opineCommand(sock, msg);
                 break;
             default:
