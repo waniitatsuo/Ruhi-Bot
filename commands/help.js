@@ -119,7 +119,7 @@ async function helpCommand(sock, chatId, message) {
 ╚═══════════════════╝`;
 
     try {
-        const imagePath = path.join(__dirname, '../assets/bot_image.jpg');
+        const imagePath = path.join(__dirname, '../assets/bot_image.png');
         
         const buttons = [
             { buttonId: 'Canal', buttonText: { displayText: '📢 Entre no Canal' }, type: 1 },
