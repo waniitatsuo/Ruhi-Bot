@@ -151,9 +151,3 @@ async function helpCommand(sock, chatId, message) {
 }
 
 module.exports = helpCommand;
-
-// 1. Importe o arquivo lá no topo
-const verificarGatilhos = require('./triggers'); 
-
-// ... dentro da função connectToWhatsApp, onde você recebe as mensagens (upsert) ...
-
