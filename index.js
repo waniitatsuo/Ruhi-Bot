@@ -92,6 +92,11 @@ const question = (text) => {
 
 async function startXeonBotInc() {
     try {
+
+        if (!fs.existsSync('./session')) {
+            fs.mkdirSync('./session');
+        }
+        
         let { version, isLatest } = await fetchLatestBaileysVersion()
         const { state, saveCreds } = await useMultiFileAuthState(`./session`)
         const msgRetryCounterCache = new NodeCache()
