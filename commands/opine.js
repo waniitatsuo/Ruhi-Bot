@@ -27,9 +27,9 @@ module.exports = async (sock, msg) => {
         // --- 2. SORTEAR A FIGURINHA ---
         // Vamos tentar 3 caminhos possíveis para achar a pasta "media"
         const possiveisCaminhos = [
-            path.join(process.cwd(), 'media', 'stickers', 'opiniao'),      // Tentativa 1: Na raiz onde o bot roda
-            path.join(__dirname, '..', 'media', 'stickers', 'opiniao'),    // Tentativa 2: Voltando 1 pasta
-            path.join(__dirname, '..', '..', 'media', 'stickers', 'opiniao') // Tentativa 3: Voltando 2 pastas
+            path.join(process.cwd(), 'media', 'images', 'opiniao'),      // Tentativa 1: Na raiz onde o bot roda
+            path.join(__dirname, '..', 'media', 'images', 'opiniao'),    // Tentativa 2: Voltando 1 pasta
+            path.join(__dirname, '..', '..', 'media', 'images', 'opiniao') // Tentativa 3: Voltando 2 pastas
         ];
 
         let pastaOpiniao = null;
