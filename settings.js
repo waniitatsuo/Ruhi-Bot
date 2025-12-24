@@ -3,7 +3,7 @@ const settings = {
   author: 'Wanii Tatsuo',
   botName: "Ruhi",
   botOwner: 'Waniiburro', // Your name
-  ownerNumber: ['5598988056664', '251625004347514', '243241781821672'],
+  ownerNumber: '5598988056664', // bot number, to set your real number or jid, go to ./lib/isOwner.js
   realOwner: '5598989027500',
   giphyApiKey: 'qnl7ssQChTdPjsKta2Ax2LMaGXz303tq',
   commandMode: "public",
