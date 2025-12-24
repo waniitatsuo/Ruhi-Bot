@@ -1164,7 +1164,7 @@ async function handleMessages(sock, messageUpdate, printLog) {
                 commandExecuted = true;
                 break;
             case userMessage.startsWith('.termo'):
-                await termoCommand(sock, chatId, message);
+                await termoCommand(sock, message);
                 commandExecuted = true;
                 break;
             case userMessage.startsWith('.salvar'):
@@ -1175,8 +1175,8 @@ async function handleMessages(sock, messageUpdate, printLog) {
                 await googleCommand(sock, chatId, message);
                 commandExecuted = true;
                 break;
-            case userMessage === 'opine':
-                await opineCommand(sock, msg);
+            case userMessage === '.opine':
+                await opineCommand(sock, message);
                 break;
             default:
                 if (isGroup) {

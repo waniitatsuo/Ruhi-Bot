@@ -9,6 +9,28 @@
  * - Baileys Library by @adiwajshing
  * - Pair Code implementation inspired by TechGod143 & DGXEON
  */
+
+
+/* 
+
+const { exec } = require("child_process");
+
+// Esse comando força a instalação do FFmpeg assim que o bot liga
+console.log("⏳ Verificando e instalando dependências de áudio no servidor...");
+
+exec("apt-get update && apt-get install -y ffmpeg && npm install ffmpeg-static", (error, stdout, stderr) => {
+    if (error) {
+        console.log(`⚠️ Erro ao tentar instalar via sistema (pode ser falta de permissão): ${error.message}`);
+        return;
+    }
+    if (stderr) {
+        // Stderr nem sempre é erro, as vezes é só log de instalação
+        console.log(`📝 Log do sistema: ${stderr}`);
+    }
+    console.log(`✅ Resultado da instalação: ${stdout}`);
+});
+
+*/
 require('./settings')
 const { Boom } = require('@hapi/boom')
 const fs = require('fs')
@@ -70,7 +92,7 @@ setInterval(() => {
     }
 }, 30_000) // check every 30 seconds
 
-let phoneNumber = "559888056664"
+let phoneNumber = "5598988056664"
 let owner = JSON.parse(fs.readFileSync('./data/owner.json'))
 
 global.botname = "Ruhi Bot"
@@ -161,15 +183,7 @@ async function startXeonBotInc() {
                 if (mek.key && mek.key.remoteJid) {
                     await XeonBotInc.sendMessage(mek.key.remoteJid, {
                         text: '❌ An error occurred while processing your message.',
-                        contextInfo: {
-                            forwardingScore: 1,
-                            isForwarded: true,
-                            forwardedNewsletterMessageInfo: {
-                                newsletterJid: '120363161513685998@newsletter',
-                                newsletterName: 'Ruhi Bot',
-                                serverMessageId: -1
-                            }
-                        }
+                        contextInfo: { }
                     }).catch(console.error);
                 }
             }
@@ -270,15 +284,7 @@ async function startXeonBotInc() {
                 const botNumber = XeonBotInc.user.id.split(':')[0] + '@s.whatsapp.net';
                 await XeonBotInc.sendMessage(botNumber, {
                     text: `🤖 Bot Connected Successfully!\n\n⏰ Time: ${new Date().toLocaleString()}\n✅ Status: Online and Ready!\n\n✅Make sure to join below channel`,
-                    contextInfo: {
-                        forwardingScore: 1,
-                        isForwarded: true,
-                        forwardedNewsletterMessageInfo: {
-                            newsletterJid: '120363161513685998@newsletter',
-                            newsletterName: 'KnightBot MD',
-                            serverMessageId: -1
-                        }
-                    }
+                    contextInfo: { }
                 });
             } catch (error) {
                 console.error('Error sending connection message:', error.message)

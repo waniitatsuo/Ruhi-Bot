@@ -25,13 +25,32 @@ module.exports = async (sock, msg) => {
         }
 
         // --- 2. SORTEAR A FIGURINHA ---
-        // Vamos usar a pasta de stickers que já estão prontos (WebP)
-        const pastaOpiniao = path.join(__dirname, '..', 'media', 'images', 'opiniao');
+        // Vamos tentar 3 caminhos possíveis para achar a pasta "media"
+        const possiveisCaminhos = [
+            path.join(process.cwd(), 'media', 'stickers', 'opiniao'),      // Tentativa 1: Na raiz onde o bot roda
+            path.join(__dirname, '..', 'media', 'stickers', 'opiniao'),    // Tentativa 2: Voltando 1 pasta
+            path.join(__dirname, '..', '..', 'media', 'stickers', 'opiniao') // Tentativa 3: Voltando 2 pastas
+        ];
 
-        if (!fs.existsSync(pastaOpiniao)) {
-            return await sock.sendMessage(from, { text: '❌ Pasta de opinião não localizada.' }, { quoted: msg });
+        let pastaOpiniao = null;
+
+        // Loop para testar qual caminho existe de verdade
+        for (let caminho of possiveisCaminhos) {
+            if (fs.existsSync(caminho)) {
+                pastaOpiniao = caminho;
+                break; // Achou! Para de procurar.
+            }
         }
 
+        // --- DEBUG (IMPORTANTE) ---
+        if (!pastaOpiniao) {
+            console.log('[ERRO GRAVE] Não achei a pasta media em lugar nenhum!');
+            console.log('Tentei procurar nestes locais:', possiveisCaminhos);
+            return await sock.sendMessage(from, { text: '❌ Erro interno: Pasta media não encontrada.' }, { quoted: msg });
+        }
+
+        console.log(`[SUCESSO] Pasta encontrada em: ${pastaOpiniao}`);
+        
         const arquivos = fs.readdirSync(pastaOpiniao);
         const stickers = arquivos.filter(f => f.endsWith('.webp'));
 
